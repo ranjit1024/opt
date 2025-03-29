@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import  { useState } from "react";
+import OtpInput from "./opt";
 
- const PhoneOtpForm = () =>{
+ const PhoneOtpForm = () => {
     const [phoneNumber, setPhoneNumber] = useState('');
     const [opt, setOpt] =  useState(true);
 
@@ -15,18 +16,28 @@ import React, { useState } from "react";
             alert('Invaid Mobile Number');
             return;
         }
+        setOpt(false)
     }
 
-    return <>
+    return <div>
     
-        {opt?<form onSubmit={() => {}}>
+        {
+        opt?<form onSubmit={() => {}}>
         <input type="text" value={phoneNumber} onChange={handlePhoneNumber} className="border-2 mb-2 rounded-md border-gray-500 p-1 " placeholder="Enter your mobile number" /> <br />
 
-        <input type="submit" className="border-1 px-2 py-1 hover:bg-green-300 border-gray-500 rounded-md bg-gray-300" name="" id="" onClick={handlePhoneSumbit}/>
+        <input type="submit" className="border-1 px-2 py-1 hover:bg-green-300 border-gray-500 rounded-md bg-gray-300" name="" id="" onClick={handlePhoneSumbit
+        }/>
 
         </form>:
-       <p>Enter Otp</p>}
-    </>
+        
+        <div>
+            <p>Enter Otp</p>
+            <OtpInput length={4}/>
+        </div>
+       
+ 
+        }
+        </div>
 }
 
 export default PhoneOtpForm;
