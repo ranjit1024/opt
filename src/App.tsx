@@ -1,13 +1,14 @@
-import { useState } from 'react'
+
 import './App.css'
-import PhoneOtpForm from './component/mobile'
+import Otp2 from './component/opt2'
 
 function App() {
   
   return (
     <div className='m-10   text-center flex-col flex justify-center items-center'>
-      <PhoneOtpForm/>
-      
+      <h1>Enter Otp</h1>
+      <Otp2/>
+
      
     </div>
   )
